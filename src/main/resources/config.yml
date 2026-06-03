@@ -1,0 +1,126 @@
+# ============================================================
+#                     AeroTPA Configuration
+#         Premium GUI-Driven Teleportation System
+# ============================================================
+
+# ── General Settings ─────────────────────────────────────────
+general:
+  # Enable bStats anonymous metrics? (Set to false to opt-out)
+  metrics: true
+  request-expire-seconds: 60
+  cooldown-seconds: 5
+  warmup-seconds: 3
+  cancel-on-move: true
+  cancel-move-distance: 1.0
+
+# ── Messages ─────────────────────────────────────────────────
+messages:
+  prefix: ""
+
+  # Request flow
+  request-sent: "&7Sent request to &#7B68EE{player}"
+  request-received: "&#7B68EE{player} &7requested to teleport. &f/tpaccept"
+  request-here-sent: "&7Sent here request to &#7B68EE{player}"
+  request-here-received: "&#7B68EE{player} &7requested you here. &f/tpaccept"
+
+  # Accept / Deny
+  request-accepted: "&7Accepted &#7B68EE{player}"
+  request-accepted-sender: "&#7B68EE{player} &7accepted"
+  request-denied: "&7Denied &#7B68EE{player}"
+  request-denied-sender: "&#7B68EE{player} &7denied"
+
+  # Expiry
+  request-expired: "&7Request to &#7B68EE{player} &7expired"
+  request-expired-target: "&7Request from &#7B68EE{player} &7expired"
+
+  # Warmup
+  teleporting-in: "&#7B68EETeleporting in &f{seconds}s"
+  teleport-cancelled-move: "&cTeleport cancelled"
+  teleport-success: "&#7B68EE✦ Teleported"
+
+  # Cooldown
+  cooldown-active: "&cWait &f{seconds}s"
+
+  # Toggles
+  auto-accept-enabled: "&#7B68EEAuto-accept &fON"
+  auto-accept-disabled: "&#7B68EEAuto-accept &fOFF"
+  auto-confirm-enabled: "&#7B68EEAuto-confirm &fON"
+  auto-confirm-disabled: "&#7B68EEAuto-confirm &fOFF"
+  toggle-requests-off: "&cRequests &fOFF"
+  toggle-requests-on: "&#7B68EERequests &fON"
+
+  # Errors
+  player-not-found: "&c{player} offline"
+  cannot-tpa-self: "&cCannot request self"
+  no-pending-requests: "&cNo requests"
+  no-request-from-player: "&cNo request from {player}"
+  requests-disabled: "&c{player} has requests disabled"
+  no-permission: "&cNo permission"
+  already-has-request: "&cPending request to {player} exists"
+
+  # Admin
+  config-reloaded: "&#7B68EEConfig reloaded"
+
+# ── Confirm GUI ──────────────────────────────────────────────
+gui:
+  confirm:
+    title: "&#7B68EEConfirm"
+    rows: 3
+    filler:
+      enabled: true
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    confirm-item:
+      slot: 11
+      material: LIME_WOOL
+      name: "&#55FF55Confirm"
+      lore:
+        - "&7Send to &#7B68EE{player}"
+    cancel-item:
+      slot: 15
+      material: RED_WOOL
+      name: "&#FF5555Cancel"
+      lore: []
+    info-item:
+      slot: 4
+      material: PLAYER_HEAD
+      name: "&#7B68EE{player}"
+      lore:
+        - "&7{type}"
+
+  # ── Request Dashboard GUI ──────────────────────────────────
+  dashboard:
+    title: "&#7B68EERequests"
+    rows: 6
+    filler:
+      enabled: true
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    request-start-slot: 10
+    requests-per-page: 21
+    request-item:
+      material: PLAYER_HEAD
+      name: "&#7B68EE{player}"
+      lore:
+        - "&7{type} &8• &7{time_ago}"
+        - ""
+        - "&#55FF55Left-Click &8| &aAccept"
+        - "&#FF5555Right-Click &8| &cDeny"
+    prev-page-item:
+      slot: 45
+      material: ARROW
+      name: "&f←"
+    next-page-item:
+      slot: 53
+      material: ARROW
+      name: "&f→"
+    close-item:
+      slot: 49
+      material: BARRIER
+      name: "&cClose"
+      lore: []
+    no-requests-item:
+      slot: 22
+      material: LIGHT_GRAY_STAINED_GLASS_PANE
+      name: "&7No requests"
+      lore: []

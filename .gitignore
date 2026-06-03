@@ -1,0 +1,13 @@
+target/
+*.jar
+*.iml
+.idea/
+.vscode/
+.DS_Store
+
+# Ignore the marketplace descriptions since you'll likely want a separate README.md for GitHub
+description_modrinth.md
+description_buildbybit.md
+description_buildbybit.txt
+description.md
+dependency-reduced-pom.xml

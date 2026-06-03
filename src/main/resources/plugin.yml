@@ -1,0 +1,91 @@
+name: AeroTPA
+version: '${project.version}'
+main: dev.aero.tpa.AeroTPA
+api-version: '1.21'
+description: Premium GUI-driven TPA plugin for modern Minecraft servers
+author: mahanytt
+
+commands:
+  tpa:
+    description: Send a teleport request to a player
+    usage: /tpa <player>
+    permission: aerotpa.use.tpa
+  tpahere:
+    description: Request a player to teleport to you
+    usage: /tpahere <player>
+    permission: aerotpa.use.tpahere
+  tpaccept:
+    description: Accept a teleport request
+    usage: /tpaccept [player]
+    permission: aerotpa.use.accept
+  tpadeny:
+    description: Deny a teleport request
+    usage: /tpadeny [player]
+    permission: aerotpa.use.deny
+  tpauto:
+    description: Toggle automatic acceptance of incoming TPA requests
+    usage: /tpauto
+    permission: aerotpa.use.auto
+  tpaconfirm:
+    description: Toggle automatic GUI confirmation when sending requests
+    usage: /tpaconfirm
+    permission: aerotpa.use.autoconfirm
+  tpatoggle:
+    description: Toggle incoming teleport requests on or off
+    usage: /tpatoggle
+    permission: aerotpa.use.toggle
+  tpaui:
+    description: Open your pending teleport requests dashboard
+    usage: /tpaui
+    permission: aerotpa.use.gui
+  tpareload:
+    description: Reload the AeroTPA configuration
+    usage: /tpareload
+    permission: aerotpa.admin
+
+permissions:
+  aerotpa.*:
+    description: Grants all AeroTPA permissions
+    default: op
+    children:
+      aerotpa.use.*: true
+      aerotpa.admin: true
+  aerotpa.use.*:
+    description: Grants all player-use permissions
+    default: true
+    children:
+      aerotpa.use.tpa: true
+      aerotpa.use.tpahere: true
+      aerotpa.use.accept: true
+      aerotpa.use.deny: true
+      aerotpa.use.auto: true
+      aerotpa.use.autoconfirm: true
+      aerotpa.use.toggle: true
+      aerotpa.use.gui: true
+  aerotpa.use.tpa:
+    description: Allows sending TPA requests
+    default: true
+  aerotpa.use.tpahere:
+    description: Allows sending TPAHere requests
+    default: true
+  aerotpa.use.accept:
+    description: Allows accepting TPA requests
+    default: true
+  aerotpa.use.deny:
+    description: Allows denying TPA requests
+    default: true
+  aerotpa.use.auto:
+    description: Allows toggling auto-accept
+    default: true
+  aerotpa.use.autoconfirm:
+    description: Allows toggling auto-confirm
+    default: true
+  aerotpa.use.toggle:
+    description: Allows toggling incoming requests
+    default: true
+  aerotpa.use.gui:
+    description: Allows opening the TPA dashboard GUI
+    default: true
+  aerotpa.admin:
+    description: Allows reloading the AeroTPA config
+    default: op
