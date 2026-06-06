@@ -4,6 +4,9 @@
 
 Give your players an intuitive, click-and-go experience that fits perfectly into any modern Minecraft server network.
 
+## Downloads:
+* https://modrinth.com/plugin/aerotpa
+
 ---
 
 ## ✨ Features
